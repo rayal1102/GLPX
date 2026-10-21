@@ -1,0 +1,3 @@
+# Claude Code agent pipeline (run artifacts and local-only memory)
+.claude/pipeline/
+.claude/agent-memory-local/
