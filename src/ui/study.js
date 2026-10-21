@@ -75,6 +75,8 @@ export function renderStudy(ctx, mode) {
   const goTo = (i) => {
     index = Math.min(ids.length - 1, Math.max(0, i));
     draw();
+    // Trên mobile câu mới nằm phía trên: đưa về đầu trang
+    if (window.scrollY > 0) window.scrollTo({ top: 0 });
   };
 
   function draw() {

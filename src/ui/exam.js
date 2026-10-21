@@ -104,6 +104,8 @@ export function renderExam(ctx) {
     const goTo = (i) => {
       index = Math.min(ids.length - 1, Math.max(0, i));
       draw();
+      // Trên mobile câu mới nằm phía trên: đưa về đầu trang
+      if (window.scrollY > 0) window.scrollTo({ top: 0 });
     };
     const choose = (i) => {
       answers[ids[index]] = i;
@@ -141,12 +143,13 @@ export function renderExam(ctx) {
               el('button', { class: 'btn', type: 'button', disabled: index === 0, onClick: () => goTo(index - 1) }, icon('left'), 'Câu trước'),
               el('button', {
                 class: `btn btn-ghost${flags.has(id) ? ' active' : ''}`, type: 'button',
+                'aria-label': flags.has(id) ? 'Bỏ đánh dấu' : 'Đánh dấu', 'aria-pressed': flags.has(id) ? 'true' : 'false',
                 onClick: () => {
                   if (flags.has(id)) flags.delete(id);
                   else flags.add(id);
                   draw();
                 },
-              }, icon('flag'), flags.has(id) ? 'Bỏ đánh dấu' : 'Đánh dấu'),
+              }, icon('flag'), el('span', { class: 'btn-label', text: flags.has(id) ? 'Bỏ đánh dấu' : 'Đánh dấu' })),
               el('button', { class: 'btn', type: 'button', disabled: index === ids.length - 1, onClick: () => goTo(index + 1) }, 'Câu sau', icon('right')))),
           el('aside', { class: 'card panel' },
             el('div', { class: 'panel-head' },

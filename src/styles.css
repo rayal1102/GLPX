@@ -495,16 +495,23 @@ tbody tr:last-child td { border-bottom: 0; }
   .question { padding: 16px; }
   .rules { grid-template-columns: 1fr; }
   .exam-intro { padding: 20px; }
-  .exam-bar { flex-wrap: wrap; gap: 10px; padding: 10px 12px; }
-  .exam-bar-info { flex-basis: 100%; }
-  .exam-bar .btn { margin-left: auto; }
+  /* Thanh thi gọn một hàng để không chiếm chỗ câu hỏi */
+  .exam-bar { gap: 8px; padding: 8px 10px; margin-bottom: 12px; top: calc(var(--topbar-h) + 6px); }
+  .exam-bar-info { min-width: 0; grid-template-columns: 1fr; gap: 4px; }
+  .exam-bar-info .muted { display: none; }
+  .exam-bar-info strong { white-space: nowrap; }
+  .timer { font-size: 1.05rem; padding: 4px 10px; gap: 4px; }
+  .exam-bar .btn { min-height: 38px; padding: 6px 12px; }
   .result-hero { flex-direction: column; text-align: center; padding: 22px; }
   .danger-zone { flex-direction: column; align-items: stretch; }
   .toast { bottom: calc(80px + env(safe-area-inset-bottom)); }
 }
 @media (max-width: 420px) {
   .stat-tile { flex-direction: column; gap: 8px; }
-  .nav-row .btn { padding: 10px; font-size: 0.88rem; }
+  .nav-row { gap: 6px; }
+  .nav-row .btn { padding: 8px 6px; gap: 4px; font-size: 0.88rem; white-space: nowrap; }
+  .nav-row .btn-ghost { flex: 0 0 46px; }
+  .nav-row .btn-ghost .btn-label { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
