@@ -1,0 +1,1 @@
+- [Review checklist (GPLX app)](review-checklist-gplx.md) — recurring weak spots: scrape flags overwriting data, image type, storage keys/values, hash decode, fixed-in-filter CSS, mtime for untracked fix rounds

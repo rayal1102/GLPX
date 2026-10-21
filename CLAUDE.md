@@ -18,17 +18,19 @@ Giới hạn ghi file được thực thi bằng hook `.claude/hooks/guard-paths
 - Yêu cầu dự án đã dùng git và có ít nhất một commit. Pipeline không bao giờ tự commit/push.
 
 ### Lệnh của dự án
-Dự án hiện chưa có code (khảo sát ngày 2026-10-15). Cập nhật bảng này khi đã chọn stack.
+Web app offline ôn thi lý thuyết GPLX hạng B (600 câu): Vite + vanilla JS (ESM), build ra một file `dist/index.html` mở trực tiếp bằng double-click; test bằng Vitest; dữ liệu scrape một lần từ hoclaixehcm.vn vào `src/data/questions.json` và `public/images/`. Cần Node >= 18.
 
 | Việc | Lệnh |
 |---|---|
-| Cài đặt | chưa có |
-| Chạy dev | chưa có |
-| Build | chưa có |
+| Cài đặt | `npm install` |
+| Chạy dev | `npm run dev` |
+| Build | `npm run build` (ra `dist/index.html`, mở trực tiếp) |
 | Lint | chưa có |
 | Typecheck | chưa có |
-| Test | chưa có |
-| Chạy một file test | chưa có |
+| Test | `npm test` (`vitest run`) |
+| Chạy một file test | `npx vitest run tests/<file>.test.js` |
+| Thu thập dữ liệu | `npm run scrape` (tùy chọn `-- --only=1-30` ghi ra `.cache/questions.partial.json`, không đè dữ liệu thật; cache ở `.cache/scrape/`) |
+| Kiểm tra dữ liệu | `npm run verify-data` |
 
 ### Quy ước file test
 Hook dùng regex sau (`TEST_RE`) để nhận diện file test:

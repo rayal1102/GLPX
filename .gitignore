@@ -1,3 +1,8 @@
 # Claude Code agent pipeline (run artifacts and local-only memory)
 .claude/pipeline/
 .claude/agent-memory-local/
+
+# Dự án GPLX
+node_modules/
+dist/
+.cache/
