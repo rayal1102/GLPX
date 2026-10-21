@@ -1,2 +1,0 @@
-- [Pipeline planning pitfalls](pipeline-planning-pitfalls.md) — builder can't write tests/ fixtures; tester can't install test runner; builder may edit CLAUDE.md; WebFetch has no raw HTML
-- [GPLX data sources](gplx-data-sources.md) — hoclaixehcm.vn is SSR/scrapable (URL scheme), taplaixe.vn is JS-loaded (cross-check only)

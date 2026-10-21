@@ -6,3 +6,7 @@
 node_modules/
 dist/
 .cache/
+
+# Cấu hình Claude Code (chỉ giữ trên máy)
+.claude/
+CLAUDE.md

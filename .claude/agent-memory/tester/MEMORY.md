@@ -1,1 +1,0 @@
-- [Test setup](project_test_setup.md) — vitest commands, fixtures, Bash heredoc quirk
